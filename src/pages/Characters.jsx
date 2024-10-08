@@ -17,12 +17,14 @@ export function Characters() {
     <>
       <div className="films-page">
         <h1>Characters from Movies</h1>
-        {charData &&
-          charData?.length > 0 &&
-          Array.isArray(charData) &&
-          charData.map((char) => {
-            return <CharactersCard char={char} key={char.name} />;
-          })}
+        {charData && charData?.length > 0 && Array.isArray(charData) && (
+          <div className="char-page">
+            {" "}
+            {charData.map((char) => {
+              return <CharactersCard char={char} key={char.name} />;
+            })}
+          </div>
+        )}
       </div>
     </>
   );

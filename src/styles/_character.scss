@@ -1,0 +1,18 @@
+.char-page {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.char-container {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 10px;
+  max-width: 250px;
+  height: 250px;
+  background-color: black;
+  color: orange;
+  text-align: center;
+  padding: 10px;
+}

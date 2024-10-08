@@ -1,15 +1,13 @@
 import { MovieCard } from "../components/MovieCard.jsx";
 import { useEffect, useState } from "react";
 import { fetchData } from "../utils/fetchData.js";
-import { styled } from "styled-components";
+// import { styled } from "styled-components";
 import "../styles/main.css";
 
-const StyledFilmsContainer = styled.div`
-  width: 100%;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-`;
+// const StyledFilmsPage = styled.div`
+
+//   }
+// `;
 export function Movies() {
   const [filmsData, setFilmsData] = useState([]);
   const [error, setError] = useState(null);
@@ -21,14 +19,14 @@ export function Movies() {
   }, []);
 
   return (
-    <div className="films-page">
+    <div className="movies-container">
       <h1>Movies</h1>
       {filmsData && filmsData?.length > 0 && Array.isArray(filmsData) && (
-        <StyledFilmsContainer className="films-container">
+        <div className="movies-list">
           {filmsData.map((film) => {
             return <MovieCard film={film} key={film.episode_id} />;
           })}
-        </StyledFilmsContainer>
+        </div>
       )}
     </div>
   );

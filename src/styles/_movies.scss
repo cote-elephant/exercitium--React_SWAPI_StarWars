@@ -1,1 +1,79 @@
+.movies-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
+.movies-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  width: 300px;
+  height: 400px;
+  // transform-style: preserve-3d;
+  // transform: perspective(1000px);
+  // transition: transform 0.6s;
+  cursor: pointer;
+}
+
+/* Crawling text animation */
+.animate-crawling {
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+}
+.animate-crawling{
+    border: solid;
+}
+.animate-crawling p {
+  display: none;
+}
+.animate-crawling p:hover {
+  display: block;
+  white-space: nowrap;
+  transform: translateX(100%);
+  animation: crawlText 50s linear infinite;
+}
+
+@keyframes crawlText {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+// .rotating-border {
+//   margin: 100px auto;
+//   position: relative;
+//   width: 1300px;
+//   height: 1300px;
+//   padding: 250px;
+// }
+
+// .rotating-border::before {
+//   content: "";
+//   position: absolute;
+//   top: -100px;
+//   left: -100px;
+//   right: -100px;
+//   bottom: -100px;
+//   border: dotted black 10px;
+//   border-radius: 50%;
+//   box-sizing: border-box;
+//   animation: rotateBorder 3s linear infinite;
+// }
+
+// @keyframes rotateBorder {
+//   from {
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }
