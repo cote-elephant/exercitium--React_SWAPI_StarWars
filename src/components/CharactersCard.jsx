@@ -14,11 +14,12 @@ export function CharactersCard({ char }) {
   // "Unknown Character";
   return (
     <>
-    <div className="char-container">
-      <h3>{name}</h3>
-      <p>came into existence on {birth_year}</p>
+      <div className="char-info-container">
+        <h3>{name}</h3>
+        <p>came into existence on {birth_year}</p>
 
-      {pic && <img src={pic} alt={pic} key={pic[pic]} />}
-   </div> </>
+        {pic && <img src={pic} alt={pic} key={pic[pic]} />}
+      </div>{" "}
+    </>
   );
 }

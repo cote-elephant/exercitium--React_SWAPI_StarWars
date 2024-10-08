@@ -1,50 +1,94 @@
+.movies-page {
+  padding: 10px 0;
+  border: solid;
+  text-align: center;
+}
+
 .movies-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  padding: 10px 0;
 }
 
-.movies-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.card {
-  width: 300px;
-  height: 400px;
-  // transform-style: preserve-3d;
-  // transform: perspective(1000px);
-  // transition: transform 0.6s;
-  cursor: pointer;
+.turnaround-container {
+  width: 500px;
+  height: 170px;
+  padding: 10px 0;
+  &:hover .turnaround {
+    transform: rotateY(180deg);
+  }
+  .turnaround {
+    position: relative;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+  }
+  .front,
+  .back {
+    width: 400px;
+    height: 150px;
+    position: absolute;
+    backface-visibility: hidden; /* Hide the back when facing away */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .front {
+    background-color: black;
+    color: white;
+    z-index: 2;
+  }
+  .back {
+    background-color: rgb(0, 0, 0);
+    transform: rotateY(180deg);
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    cursor: pointer;
+    &:after {
+      content: "";
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 50%;
+      /* background to fade out the text as it goes up */
+      background: linear-gradient(
+        180deg,
+        rgba(20, 20, 20, 1) 40%,
+        rgba(20, 20, 20, 0) 100%
+      );
+    }
+    .wrapper {
+      display: flex;
+      height: 100%;
+      width: 90%;
+      margin: 0 auto;
+      perspective: 500px;
+    }
+  }
 }
 
 /* Crawling text animation */
-.animate-crawling {
-  height: 50px;
-  overflow: hidden;
+.text-crawling:hover p{
+  line-height: 2em;
+  font-size: 20px;
+  font-weight: bold;
   position: relative;
-}
-.animate-crawling{
-    border: solid;
-}
-.animate-crawling p {
-  display: none;
-}
-.animate-crawling p:hover {
-  display: block;
-  white-space: nowrap;
-  transform: translateX(100%);
-  animation: crawlText 50s linear infinite;
+  text-align: justify;
+  transform: translateY(200px);
+  animation: crawlText 15s infinite linear;
 }
 
+p {
+  color: white;
+}
 @keyframes crawlText {
   0% {
-    transform: translateX(100%);
+    transform: translateY(200px);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateY(-500px);
   }
 }
 

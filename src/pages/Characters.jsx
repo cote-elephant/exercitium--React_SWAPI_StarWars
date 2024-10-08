@@ -15,11 +15,10 @@ export function Characters() {
 
   return (
     <>
-      <div className="films-page">
-        <h1>Characters from Movies</h1>
+      <div className="char-page">
+        <h1>Characters</h1>
         {charData && charData?.length > 0 && Array.isArray(charData) && (
-          <div className="char-page">
-            {" "}
+          <div className="char-container">
             {charData.map((char) => {
               return <CharactersCard char={char} key={char.name} />;
             })}

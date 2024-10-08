@@ -19,18 +19,22 @@ export function MovieCard({ film }) {
 
   return (
     <>
-      <div className="card">
-        <div className="slide slide1">
-          <div className="content">
-            <h3 >{episode_id}. {title}</h3>
-            <p>Directed by {director}</p>
-            <p>Released on {release_date}</p>
+      <div className="turnaround-container">
+        <div className="turnaround">
+          <div className="front">
+            <h3>
+              {episode_id}. {title}
+            </h3>
+            <span>Directed by {director}</span>
+            <span>Released on {release_date}</span>
           </div>
-        </div>
-        <div className="slide slide2">
-          <div className="content">
-            <div className="animate-crawling">
-              <p>{opening_crawl}...</p>
+          <div className="back">
+            <div className="wrapper">
+              <div className="text-crawling">
+                <p>
+                  {title}...{opening_crawl}...
+                </p>
+              </div>
             </div>
           </div>
         </div>

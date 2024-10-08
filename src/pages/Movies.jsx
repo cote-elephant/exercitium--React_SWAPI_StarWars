@@ -1,6 +1,9 @@
-import { MovieCard } from "../components/MovieCard.jsx";
 import { useEffect, useState } from "react";
+
+import { MovieCard } from "../components/MovieCard.jsx";
+
 import { fetchData } from "../utils/fetchData.js";
+
 // import { styled } from "styled-components";
 import "../styles/main.css";
 
@@ -19,10 +22,10 @@ export function Movies() {
   }, []);
 
   return (
-    <div className="movies-container">
-      <h1>Movies</h1>
+    <div className="movies-page">
+      <h2>Movies</h2>
       {filmsData && filmsData?.length > 0 && Array.isArray(filmsData) && (
-        <div className="movies-list">
+        <div className="movies-container">
           {filmsData.map((film) => {
             return <MovieCard film={film} key={film.episode_id} />;
           })}

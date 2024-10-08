@@ -4,15 +4,20 @@ import "../styles/main.css";
 export function Header() {
   const activeState = ({ isActive }) => {
     return {
-      color: isActive ? "black" : "orange",
-      padding: isActive ? "5px 15px" : "none",
+      textDecoration: "none",
+      color: isActive ? "gray" : "orange",
+      padding: isActive ? "5px 25px" : "5px 10px",
       border: isActive ? "black solid 2px" : "none",
+      borderColor: isActive ? "gray" : "none",
     };
   };
+
   return (
     <>
       <header>
-        <h1>React Project</h1>
+        <h1>
+          React Project <span>Star Wars</span>
+        </h1>
         <ul>
           <li>
             <NavLink to="/movies" style={activeState}>
