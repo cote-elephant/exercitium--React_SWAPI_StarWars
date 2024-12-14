@@ -1,5 +1,5 @@
 //const URL = "https://cat-fact.herokuapp.com"
-const apiUrl = "https://swapi.dev/api";
+const apiUrl = "https://swapi.tech/api";
 
 export const fetchData = async (endpoint) => {
   if (!endpoint && typeof endpoint !== "string") {
