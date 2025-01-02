@@ -4,7 +4,7 @@ import { PlanetsCard } from "../components/PlanetsCard.jsx";
 
 import { fetchData } from "../utils/fetchData.js";
 
-import "../styles/main.css"
+import "../styles/main.scss"
 
 export function Planets() {
   const [planetsData, setPlanetsData] = useState([]);

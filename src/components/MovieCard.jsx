@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+//import { styled } from "styled-components";
 
 //  const StyledContainer = styled.div`
 //     display: flex;
@@ -11,6 +11,7 @@ import { styled } from "styled-components";
 //     text-align: center;
 //     padding: 10px;
 //   `;
+
 export function MovieCard({ film }) {
   if (!film) {
     console.log("no data");
@@ -25,8 +26,8 @@ export function MovieCard({ film }) {
             <h3>
               {episode_id}. {title}
             </h3>
-            <span>Directed by {director}</span>
-            <span>Released on {release_date}</span>
+            <span><strong>Directed by</strong>  {director}</span>
+            <span><strong>Released on</strong> {release_date}</span>
           </div>
           <div className="back">
             <div className="wrapper">

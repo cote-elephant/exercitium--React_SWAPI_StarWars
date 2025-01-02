@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import "../styles/main.css";
+import "../styles/main.scss";
 
 export function Header() {
   const activeState = ({ isActive }) => {

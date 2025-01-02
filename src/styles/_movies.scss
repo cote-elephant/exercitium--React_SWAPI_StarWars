@@ -5,22 +5,33 @@
 }
 
 .movies-container {
+  width: 100%;
+  margin: 0 auto;
   padding: 10px 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
+  /* PART FOR TURNING AROUND THE CARD  */
 .turnaround-container {
   width: 500px;
   height: 170px;
   padding: 10px 0;
+
   &:hover .turnaround {
     transform: rotateY(180deg);
   }
+
   .turnaround {
     position: relative;
     transform-style: preserve-3d;
     display: flex;
     justify-content: center;
+    transition: transform 0.6s ease-in-out; /* Smooth flipping */
   }
+
+  /* PART FOR FRONT AND BACK SIDE OF CARD */
   .front,
   .back {
     width: 400px;
@@ -34,11 +45,17 @@
     padding: 20px;
     box-sizing: border-box;
   }
+  /* PART FOR BACK SIDE OF CARD */
   .front {
     background-color: black;
     color: white;
     z-index: 2;
+    h3{
+      padding: 10px;
+    }
   }
+
+  /* PART FOR BACK SIDE OF CARD */
   .back {
     background-color: rgb(0, 0, 0);
     transform: rotateY(180deg);
@@ -46,6 +63,7 @@
     margin: 0 auto;
     position: relative;
     cursor: pointer;
+
     &:after {
       content: "";
       position: fixed;
@@ -59,29 +77,29 @@
         rgba(20, 20, 20, 0) 100%
       );
     }
+
+    /* PART FOR CRAWLING TEXT - not great finish*/
     .wrapper {
       display: flex;
       height: 100%;
       width: 90%;
       margin: 0 auto;
       perspective: 500px;
+
+        /* Trigger crawling on flip */
+      .text-crawling {
+        p {
+          color: white;
+          opacity: 1; /* Hide initially */
+          position: relative;
+          transform: translateY(200px);
+          transition: opacity 0.6s ease-in-out; /* Smooth reveal */
+          animation: crawlText 15s infinite linear; }
+
+        
+      }
     }
   }
-}
-
-/* Crawling text animation */
-.text-crawling:hover p{
-  line-height: 2em;
-  font-size: 20px;
-  font-weight: bold;
-  position: relative;
-  text-align: justify;
-  transform: translateY(200px);
-  animation: crawlText 15s infinite linear;
-}
-
-p {
-  color: white;
 }
 @keyframes crawlText {
   0% {
