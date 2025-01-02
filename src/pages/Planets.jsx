@@ -4,7 +4,7 @@ import { PlanetsCard } from "../components/PlanetsCard.jsx";
 
 import { fetchData } from "../utils/fetchData.js";
 
-import "../styles/main.scss"
+import "../styles/main.scss";
 
 export function Planets() {
   const [planetsData, setPlanetsData] = useState([]);
@@ -17,14 +17,18 @@ export function Planets() {
   }, []);
 
   return (
-    <div className="planets-page">
+    <div className="page">
       <h1>Planets</h1>
-      {planetsData && planetsData?.length > 0 && Array.isArray(planetsData) && (
-        <div className="planets-container">
+      {error && <p className="error-message">{error}</p>}
+
+      {planetsData && planetsData?.length > 0 && Array.isArray(planetsData) ? (
+        <div className="container">
           {planetsData.map((planet, id) => {
             return <PlanetsCard planet={planet} key={id} />;
           })}
         </div>
+      ) : (
+        !error && <p>Loading movies...</p>
       )}
     </div>
   );

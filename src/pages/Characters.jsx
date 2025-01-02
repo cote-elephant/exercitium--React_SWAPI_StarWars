@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { fetchData } from "../utils/fetchData.js";
 
 import { CharactersCard } from "../components/CharactersCard.jsx";
+import "../styles/main.scss";
 
 export function Characters() {
   const [charData, setCharData] = useState([]);
@@ -15,10 +16,10 @@ export function Characters() {
 
   return (
     <>
-      <div className="char-page">
+      <div className="page">
         <h1>Characters</h1>
         {charData && charData?.length > 0 && Array.isArray(charData) && (
-          <div className="char-container">
+          <div className="container">
             {charData.map((char) => {
               return <CharactersCard char={char} key={char.name} />;
             })}

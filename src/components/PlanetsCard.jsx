@@ -3,11 +3,11 @@ export function PlanetsCard({ planet }) {
 
   return (
     <>
-      <div className="planet-container">
-        <h3>{name}</h3>
-        <p>{diameter}</p>
-        <p>{gravity} </p>
-        <p>{population}</p>
+      <div className="info-box">
+        <h3>Name: {name}</h3>
+        <p>Diameter: {diameter}</p>
+        <p>Gravity: {gravity} </p>
+        <p>Population: {population}</p>
       </div>
     </>
   );

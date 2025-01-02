@@ -15,12 +15,12 @@ export function Movies() {
   }, []);
 
   return (
-    <div className="movies-page">
-      <h2>Movies</h2>
+    <div className="page">
+      <h1>Movies</h1>
       {error && <p className="error-message">{error}</p>}
       
       {filmsData && Array.isArray(filmsData) && filmsData.length > 0 ? (
-        <div className="movies-container">
+        <div className="container">
           {filmsData.map((film) => (
             <MovieCard film={film} key={film.episode_id} />
           ))}
